@@ -59,11 +59,11 @@ printstamp <- function(msg, sym="#"){
 #' @export
 printlines <- function(liheader = NULL,
                        litems = NULL,
-                       likeyword = "TXT",
+                       likeyword = "TAG",
                        lileadcol = "black",
-                       likwbgfill = "lightblue",
+                       likwbgfill = "yellow",
                        likwtxtcol = "black",
-                       libgfill = "yellow",
+                       libgfill = "blue",
                        sym = "=",
                        symcol = "blue",
                        is_ordered = TRUE){

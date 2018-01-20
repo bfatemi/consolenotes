@@ -9,9 +9,9 @@
 \usage{
 printstamp(msg, sym = "#")
 
-printlines(liheader = NULL, litems = NULL, likeyword = "TXT",
-  lileadcol = "black", likwbgfill = "lightblue", likwtxtcol = "black",
-  libgfill = "yellow", sym = "=", symcol = "blue", is_ordered = TRUE)
+printlines(liheader = NULL, litems = NULL, likeyword = "TAG",
+  lileadcol = "black", likwbgfill = "yellow", likwtxtcol = "black",
+  libgfill = "blue", sym = "=", symcol = "blue", is_ordered = TRUE)
 
 print_rt(t)
 }
