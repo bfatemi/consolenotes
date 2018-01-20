@@ -12,7 +12,7 @@ test_that("basic print", {
 
   printlines(liheader = "Data Processing Steps:",
              litems = litems,
-             likeyword = "TAG",
+             likeyword = "DATA",
              lileadcol = "white",
              libgfill = "blue",
              likwtxtcol = "black",
