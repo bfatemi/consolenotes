@@ -38,7 +38,8 @@ PrintSection <- function(stitle = NULL,
    if( is.null(bullets) )
       stop("Provide content for bulleted list")
 
-   printlines(liheader = "COMMENTS",
+   header[is.null(header)] <- "COMMENTS"
+   printlines(liheader = header,
               litems = as.list(bullets),
               likeyword = tag,
               sym = "_",
