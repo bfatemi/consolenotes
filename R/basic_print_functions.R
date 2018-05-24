@@ -12,12 +12,38 @@
 #' @param is_ordered TRUE (default) means the leading list identifer is numbered bullet pts
 #' @param msg message message for printstamp
 #' @param t time object system time for print_rt
+#' @param stitle Title of section for PrintSection
+#' @param header Section header text for PrintSection
+#' @param bullets list of notes displayed as bullets in higher level PrintSection function
+#' @param tag arg for higher level PrintSection function. Content of tag box fill
+#' @param color arg for higher level PrintSection function. Color of tag box fill
 #'
 #' @import crayon
 #' @import stringr
 #'
 #' @name printer_funs
 NULL
+
+#' @describeIn printer_funs higher level function to print message on console
+#' @export
+PrintSection <- function(stitle = NULL,
+                         header = NULL,
+                         bullets = NULL,
+                         tag = "NOTE",
+                         color = "white"){
+
+   if( !is.null(stitle) )
+      printstamp(stitle, "%")
+
+   if( is.null(bullets) )
+      stop("Provide content for bulleted list")
+
+   printlines(liheader = "COMMENTS",
+              litems = as.list(bullets),
+              likeyword = tag,
+              sym = "_",
+              likwbgfill = color)
+}
 
 #' @describeIn printer_funs print message on console
 #' @export
