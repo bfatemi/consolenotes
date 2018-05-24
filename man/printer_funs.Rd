@@ -2,11 +2,15 @@
 % Please edit documentation in R/basic_print_functions.R
 \name{printer_funs}
 \alias{printer_funs}
+\alias{PrintSection}
 \alias{printstamp}
 \alias{printlines}
 \alias{print_rt}
 \title{Print Helper}
 \usage{
+PrintSection(stitle = NULL, header = NULL, bullets = NULL, tag = "NOTE",
+  color = "white")
+
 printstamp(msg, sym = "#")
 
 printlines(liheader = NULL, litems = NULL, likeyword = "TAG",
@@ -16,6 +20,16 @@ printlines(liheader = NULL, litems = NULL, likeyword = "TAG",
 print_rt(t)
 }
 \arguments{
+\item{stitle}{Title of section for PrintSection}
+
+\item{header}{Section header text for PrintSection}
+
+\item{bullets}{list of notes displayed as bullets in higher level PrintSection function}
+
+\item{tag}{arg for higher level PrintSection function. Content of tag box fill}
+
+\item{color}{arg for higher level PrintSection function. Color of tag box fill}
+
 \item{msg}{message message for printstamp}
 
 \item{sym}{symbol to use to print a sectioned list}
@@ -45,6 +59,8 @@ Print Helper
 }
 \section{Functions}{
 \itemize{
+\item \code{PrintSection}: higher level function to print message on console
+
 \item \code{printstamp}: print message on console
 
 \item \code{printlines}: print message on console
