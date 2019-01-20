@@ -22,8 +22,10 @@ test_that("basic print", {
              is_ordered = FALSE)
 
   printstamp("message")
+  printstamp("message", ">")
+  printstamp("message", "AB") ### bug
 
-  t <- Sys.time()
-  print_rt(t)
+  ts <- Sys.time()
+  print_runtime(ts)
 
 })

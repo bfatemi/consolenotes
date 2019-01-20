@@ -11,12 +11,13 @@
 #' @param symcol color of the list partitioning
 #' @param is_ordered TRUE (default) means the leading list identifer is numbered bullet pts
 #' @param msg message message for printstamp
-#' @param t time object system time for print_rt
+#' @param t time object system time for print_runtime
 #' @param stitle Title of section for PrintSection
 #' @param header Section header text for PrintSection
 #' @param bullets list of notes displayed as bullets in higher level PrintSection function
 #' @param tag arg for higher level PrintSection function. Content of tag box fill
 #' @param color arg for higher level PrintSection function. Color of tag box fill
+#' @param face functions from crayon (one of bold or italic)
 #'
 #' @import crayon
 #' @import stringr
@@ -48,8 +49,10 @@ PrintSection <- function(stitle = NULL,
 
 #' @describeIn printer_funs print message on console
 #' @export
-printstamp <- function(msg, sym="#"){
-  sym <- blue(sym)
+printstamp <- function(msg,
+                       sym="#",
+                       color = c("blue", "red", "cyan", "green", "magenta", "yellow", "white", "silver"),
+                       face = c("bold", "italic")){
 
   if(stringr::str_length(msg) %% 2 == 1)
     msg <- stringr::str_c(msg, " ")
@@ -174,8 +177,23 @@ printlines <- function(liheader = NULL,
 
 #' @describeIn printer_funs print timing on console
 #' @export
-print_rt <- function(t){
-  tf <- Sys.time()
-  printstamp(paste0("RT: ", round(difftime(tf, t, units = "sec"), 0), " secs"), ".")
-  invisible(NULL)
+print_runtime <- function(t, sym="#"){
+   sym <- blue(sym)
+   tf <- Sys.time()
+   printstamp(paste0("RT: ", round(difftime(tf, t, units = "sec"), 0), " secs"), sym)
+   invisible(NULL)
 }
+
+
+#' @describeIn printer_funs messing around with crayon
+#' @export
+buildPyramid <- function(){
+   typeVector <- rep(c("left", "center", "right"), 4)
+   for(i in 1:12){
+      cat(crayon::col_align(crayon::red( paste0(rep("+", i), collapse = "") ), i, typeVector[i]))
+      cat("\n")
+   }
+}
+
+buildPyramid()
+

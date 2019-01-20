@@ -5,19 +5,23 @@
 \alias{PrintSection}
 \alias{printstamp}
 \alias{printlines}
-\alias{print_rt}
+\alias{print_runtime}
+\alias{buildPyramid}
 \title{Print Helper}
 \usage{
-PrintSection(stitle = NULL, header = NULL, bullets = NULL, tag = "NOTE",
-  color = "white")
+PrintSection(stitle = NULL, header = NULL, bullets = NULL,
+  tag = "NOTE", color = "white")
 
-printstamp(msg, sym = "#")
+printstamp(msg, sym = "#", color = c("blue", "red", "cyan", "green",
+  "magenta", "yellow", "white", "silver"), face = c("bold", "italic"))
 
 printlines(liheader = NULL, litems = NULL, likeyword = "TAG",
   lileadcol = "black", likwbgfill = "yellow", likwtxtcol = "black",
   libgfill = "blue", sym = "=", symcol = "blue", is_ordered = TRUE)
 
-print_rt(t)
+print_runtime(t, sym = "#")
+
+buildPyramid()
 }
 \arguments{
 \item{stitle}{Title of section for PrintSection}
@@ -33,6 +37,8 @@ print_rt(t)
 \item{msg}{message message for printstamp}
 
 \item{sym}{symbol to use to print a sectioned list}
+
+\item{face}{functions from crayon (one of bold or italic)}
 
 \item{liheader}{text to print as header of list}
 
@@ -52,7 +58,7 @@ print_rt(t)
 
 \item{is_ordered}{TRUE (default) means the leading list identifer is numbered bullet pts}
 
-\item{t}{time object system time for print_rt}
+\item{t}{time object system time for print_runtime}
 }
 \description{
 Print Helper
@@ -65,6 +71,8 @@ Print Helper
 
 \item \code{printlines}: print message on console
 
-\item \code{print_rt}: print timing on console
+\item \code{print_runtime}: print timing on console
+
+\item \code{buildPyramid}: messing around with crayon
 }}
 
