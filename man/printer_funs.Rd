@@ -6,7 +6,7 @@
 \alias{printstamp}
 \alias{printlines}
 \alias{print_runtime}
-\alias{buildPyramid}
+\alias{print_levels}
 \title{Print Helper}
 \usage{
 PrintSection(stitle = NULL, header = NULL, bullets = NULL,
@@ -21,7 +21,7 @@ printlines(liheader = NULL, litems = NULL, likeyword = "TAG",
 
 print_runtime(t, sym = "#")
 
-buildPyramid()
+print_levels()
 }
 \arguments{
 \item{stitle}{Title of section for PrintSection}
@@ -73,6 +73,6 @@ Print Helper
 
 \item \code{print_runtime}: print timing on console
 
-\item \code{buildPyramid}: messing around with crayon
+\item \code{print_levels}: messing around with crayon
 }}
 

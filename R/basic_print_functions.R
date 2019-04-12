@@ -187,7 +187,7 @@ print_runtime <- function(t, sym="#"){
 
 #' @describeIn printer_funs messing around with crayon
 #' @export
-buildPyramid <- function(){
+print_levels <- function(){
    typeVector <- rep(c("left", "center", "right"), 4)
    for(i in 1:12){
       cat(crayon::col_align(crayon::red( paste0(rep("+", i), collapse = "") ), i, typeVector[i]))
@@ -195,5 +195,4 @@ buildPyramid <- function(){
    }
 }
 
-buildPyramid()
 
